@@ -1,0 +1,285 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  scroll-behavior: smooth;
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.fullpage-container {
+  height: 100vh;
+  width: 100vw;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.section {
+  scroll-snap-align: start;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Section 1 – Intro */
+.intro-section {
+  background-image: url('bgimg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.intro-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4));
+}
+
+.hero-content {
+  padding: 2rem;
+  max-width: 1200px;
+  width: 90%;
+  position: relative;
+  z-index: 2;
+  animation: fadeIn 1s ease-out;
+}
+
+.hero-content h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Section 2 – Gallery */
+.gallery-section {
+  background-image: url('./images/bricks.jpg');
+  background-size: contain;
+  background-repeat: repeat;
+  background-position: center;
+  background-attachment: scroll;
+  padding: 4rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  position: relative;
+}
+
+.gallery-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(90, 71, 47, 0.55);
+  z-index: 1;
+}
+
+.gallery-section h2 {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  color: #a1a1a1;
+  position: relative;
+  z-index: 2;
+  font-weight: 600;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  width: 90%;
+  max-width: 1400px;
+  padding: 1rem;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.gallery a {
+  aspect-ratio: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery a:hover {
+  transform: translateY(-5px);
+}
+
+.gallery a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery a:hover img {
+  transform: scale(1.03);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1400px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1100px;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .gallery-section h2 {
+    font-size: 1.75rem;
+  }
+}
+
+/* 🔧 UPDATED: Compact 3-column layout on small devices */
+@media (max-width: 480px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    padding: 0.5rem;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .gallery a {
+    aspect-ratio: 1 / 1;
+    border-radius: 4px;
+    box-shadow: none;
+  }
+
+  .gallery-section {
+    padding: 1rem 0.5rem;
+  }
+
+  .gallery-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .gallery-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    padding: 0.25rem;
+  }
+}
+
+/* Section 3 – Map */
+.map-section {
+  background: #f4f4f4;
+  padding: 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+}
+
+.map-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.map-container {
+  width: 100%;
+  max-width: 1000px;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.site-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(20, 20, 20, 0.85);
+  color: white;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.site-footer .social-links a {
+  color: #ddd;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  font-weight: 500;
+}
+
+.site-footer .social-links a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
