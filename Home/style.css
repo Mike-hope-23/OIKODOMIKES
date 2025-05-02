@@ -18,10 +18,13 @@ html, body {
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+  scroll-padding: 0; /* Ensures precise snapping */
+  -webkit-overflow-scrolling: touch; /* Improves scrolling on iOS */
 }
 
 .section {
   scroll-snap-align: start;
+  scroll-snap-stop: always; /* Forces scrolling to stop at each section */
   height: 100vh;
   width: 100%;
   display: flex;
@@ -33,7 +36,7 @@ html, body {
 
 /* Section 1 – Intro */
 .intro-section {
-  background-image: url('bgimg.jpg');
+  background-image: url('bgimg.webp');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -81,7 +84,7 @@ html, body {
 
 /* Section 2 – Gallery */
 .gallery-section {
-  background-image: url('./images/bricks.jpg');
+  background-image: url('./webp/bricks.webp');
   background-size: contain;
   background-repeat: repeat;
   background-position: center;
@@ -103,7 +106,7 @@ html, body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(90, 71, 47, 0.55);
+  /* background: rgba(90, 71, 47, 0.55); */
   z-index: 1;
 }
 
@@ -121,17 +124,19 @@ html, body {
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   width: 90%;
-  max-width: 1400px;
+  max-width: 1000px;
   padding: 1rem;
   margin: 0 auto;
   position: relative;
   z-index: 2;
+  justify-items: center; /* Center items horizontally in their grid cells */
 }
 
 .gallery a {
   aspect-ratio: 1;
   display: block;
   width: 100%;
+  max-width: 250px; /* Limit maximum width */
   height: auto;
   overflow: hidden;
   border-radius: 8px;
@@ -157,26 +162,32 @@ html, body {
 /* Responsive Breakpoints */
 @media (max-width: 1400px) {
   .gallery {
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 1100px;
-    gap: 1.5rem;
+    grid-template-columns: repeat(4, 1fr);
+    max-height: 700px;
+    max-width: 900px;
+    gap: 1.6rem;
+    width: 100%;
   }
 }
 
-@media (max-width: 1024px) {
-  .gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+
 
 @media (max-width: 768px) {
-  .gallery {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4px;
+        padding: 0.5rem;
+        max-width: 100%;
+        width: 100%;
+      }
 
   .gallery-section h2 {
     font-size: 1.75rem;
+  }
+  
+  .gallery a {
+    width: 90%; /* Slightly larger on smaller screens */
+    max-width: 350px;
   }
 }
 
@@ -194,6 +205,8 @@ html, body {
     aspect-ratio: 1 / 1;
     border-radius: 4px;
     box-shadow: none;
+    width: 100%; /* Full width for the smaller grid cells */
+    max-width: none;
   }
 
   .gallery-section {
@@ -231,7 +244,7 @@ html, body {
 
 .map-section h2 {
   font-size: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   color: #333;
 }
 
@@ -242,6 +255,7 @@ html, body {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
 }
 
 .site-footer {
@@ -269,8 +283,6 @@ html, body {
   color: white;
   text-decoration: underline;
 }
-
-
 
 /* Animations */
 @keyframes fadeIn {
