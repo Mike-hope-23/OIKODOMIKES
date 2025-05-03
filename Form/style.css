@@ -135,7 +135,7 @@ body{
  .container .content .left-side{
    width: 100%;
    flex-direction: row;
-   margin-top: 40px;
+   margin-top: 20px;
    justify-content: center;
    flex-wrap: wrap;
  }
@@ -146,4 +146,27 @@ body{
    width: 100%;
    margin-left: 0;
  }
+}
+
+.back-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  padding: 12px 14px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 20px;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+}
+
+.back-button i {
+  pointer-events: none;
 }
