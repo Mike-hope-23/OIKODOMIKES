@@ -50,7 +50,7 @@ html, body {
   scroll-snap-align: start;
   scroll-snap-stop: always; /* Forces scrolling to stop at each section */
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
