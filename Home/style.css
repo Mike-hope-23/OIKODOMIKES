@@ -1,3 +1,5 @@
+@import url(fonts/mnemion/Mnemion.css);
+
 /* General Reset */
 * {
   margin: 0;
@@ -37,7 +39,7 @@ html, body {
 
 
 .fullpage-container {
-  height: 100vh;
+  height: 100dvh;
   width: 100vw;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
@@ -49,7 +51,7 @@ html, body {
 .section {
   scroll-snap-align: start;
   scroll-snap-stop: always; /* Forces scrolling to stop at each section */
-  height: 100vh;
+  height: 100dvh;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -89,7 +91,8 @@ html, body {
 }
 
 .hero-content h1 {
-  font-size: 2.4rem;
+  font-family: 'Mnemion';
+  font-size: 2rem;
   font-weight: 700;
   letter-spacing: 1px;
   margin-bottom: 1.5rem;
@@ -136,12 +139,20 @@ html, body {
 }
 
 .gallery-section h2 {
+  font-family: "Comfortaa", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
   font-size: 3rem;
   margin-bottom: 3rem;
-  color: #ffffff;
+  color: #222;
+  padding: 1rem 2rem;
   position: relative;
   z-index: 2;
-  font-weight: 600;
+  backdrop-filter: blur(4px);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.6);
 }
 
 .gallery {
@@ -193,6 +204,10 @@ html, body {
     gap: 1.6rem;
     width: 100%;
   }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
 }
 
 
@@ -214,6 +229,16 @@ html, body {
     width: 90%; /* Slightly larger on smaller screens */
     max-width: 350px;
   }
+
+  .hero-content h1 {
+    font-size: 1.7rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+
+
 }
 
 /* 🔧 UPDATED: Compact 3-column layout on small devices */
@@ -259,7 +284,7 @@ html, body {
 /* Section 3 – Map */
 .map-section {
   background: #f4f4f4;
-  height: 100vh;
+  height: 100dvh;
   padding: 0;
   margin: 0;
   overflow: hidden;

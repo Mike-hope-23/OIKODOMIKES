@@ -1,0 +1,11 @@
+/* Webfont: Mnemion-Rounded */@font-face {
+    font-family: 'MnemionRounded';
+    src: url('MnemionRounded.eot'); /* IE9 Compat Modes */
+    src: url('MnemionRounded.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('MnemionRounded.woff') format('woff'), /* Modern Browsers */
+         url('MnemionRounded.ttf') format('truetype'); /* Safari, Android, iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
