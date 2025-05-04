@@ -21,7 +21,7 @@ html, body {
   padding: 12px 14px;
   border-radius: 50%;
   text-align: center;
-  font-size: 20px;
+  font-size: 18px;
   z-index: 1000;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease;
@@ -108,10 +108,10 @@ html, body {
 
 /* Section 2 – Gallery */
 .gallery-section {
-  background-image: url('./webp/bricks.webp');
-  background-size: contain;
-  background-repeat: repeat;
+  background-image: url('./webp/cement.webp');
+  background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   background-attachment: scroll;
   padding: 4rem 2rem;
   text-align: center;
@@ -130,14 +130,15 @@ html, body {
   left: 0;
   right: 0;
   bottom: 0;
-  /* background: rgba(90, 71, 47, 0.55); */
+  background: rgba(0, 0, 0, 0.2);
+  /* background: rgba(68, 66, 64, 0.55); */
   z-index: 1;
 }
 
 .gallery-section h2 {
   font-size: 3rem;
   margin-bottom: 3rem;
-  color: #a1a1a1;
+  color: #ffffff;
   position: relative;
   z-index: 2;
   font-weight: 600;
@@ -258,12 +259,15 @@ html, body {
 /* Section 3 – Map */
 .map-section {
   background: #f4f4f4;
-  padding: 3rem 1rem;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 60vh;
 }
 
 .map-section h2 {
@@ -279,7 +283,7 @@ html, body {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-  margin-bottom: 20px;
+  margin-bottom: 0;
 }
 
 .site-footer {
