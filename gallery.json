@@ -1,0 +1,12 @@
+{
+  "items": [
+    { "image": "images/proj1.jpg", "caption": "Δείγμα Εργασίας 1" },
+    { "image": "images/proj2.jpg", "caption": "Δείγμα Εργασίας 2" },
+    { "image": "images/proj3.jpg", "caption": "Δείγμα Εργασίας 3" },
+    { "image": "images/proj4.jpg", "caption": "Δείγμα Εργασίας 4" },
+    { "image": "images/proj5.jpg", "caption": "Δείγμα Εργασίας 5" },
+    { "image": "images/proj6.jpg", "caption": "Δείγμα Εργασίας 6" },
+    { "image": "images/proj7.jpg", "caption": "Δείγμα Εργασίας 7" },
+    { "image": "images/proj8.jpg", "caption": "Δείγμα Εργασίας 8" }
+  ]
+}

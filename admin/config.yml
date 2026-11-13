@@ -1,0 +1,25 @@
+backend:
+  name: git-gateway
+  branch: main # Change to 'master' if your GitHub branch is named master
+
+media_folder: "images"
+public_folder: "images"
+
+locale: 'el'
+
+collections:
+  - name: "gallery_manager"
+    label: "Φωτογραφίες Σάιτ"
+    files:
+      - name: "gallery"
+        label: "Γκαλερί Έργων (Η δουλειά μας)"
+        file: "gallery.json"
+        fields:
+          - label: "Φωτογραφίες"
+            label_singular: "Φωτογραφία"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.caption}} ({{fields.image}})"
+            fields:
+              - { label: "Φωτογραφία", name: "image", widget: "image" }
+              - { label: "Περιγραφή (προαιρετικό)", name: "caption", widget: "string", required: false, default: "Δείγμα Εργασίας" }

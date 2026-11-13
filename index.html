@@ -48,6 +48,19 @@
     <!-- Fancybox v5 CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
 
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+    if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+        if (!user) {
+            window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+            });
+        }
+        });
+    }
+    </script>
+
     <!-- Tailwind Custom Configuration for Color Palette & Fonts -->
     <script>
         tailwind.config = {
@@ -245,131 +258,9 @@
                 </p>
             </div>
 
-            <!-- 4x2 Gallery Grid with Fancybox v5 Attributes -->
-            <!-- NOTE FOR USER: Replace both the `href` (full-size image) and `src` (thumbnail image) with your 8 local image files! -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Dynamic Gallery Grid populated by gallery.json -->
+            <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
 
-                <!-- Image 1 -->
-                <a href="images/proj1.jpg" 
-                   data-fancybox="gallery" 
-                   class="group relative block aspect-square rounded-2xl overflow-hidden bg-slate-900 shadow-md hover:shadow-xl transition-all duration-300 ring-1 ring-slate-900/10">
-                    <img src="images/proj1.jpg" 
-                         alt="Δείγμα Εργασίας 1" 
-                         class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                         onerror="this.src='https://placehold.co/600x600/1E293B/FFFFFF?text=1'"/>
-                    <div class="absolute inset-0 bg-slate-950/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <div class="w-12 h-12 rounded-full bg-terracotta-600 text-white flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform duration-300">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Image 2 -->
-                <a href="images/proj2.jpg" 
-                   data-fancybox="gallery" 
-                   class="group relative block aspect-square rounded-2xl overflow-hidden bg-slate-900 shadow-md hover:shadow-xl transition-all duration-300 ring-1 ring-slate-900/10">
-                    <img src="images/proj2.jpg" 
-                         alt="Δείγμα Εργασίας 2" 
-                         class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                         onerror="this.src='https://placehold.co/600x600/1E293B/FFFFFF?text=2'"/>
-                    <div class="absolute inset-0 bg-slate-950/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <div class="w-12 h-12 rounded-full bg-terracotta-600 text-white flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform duration-300">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Image 3 -->
-                <a href="images/proj3.jpg" 
-                   data-fancybox="gallery" 
-                   class="group relative block aspect-square rounded-2xl overflow-hidden bg-slate-900 shadow-md hover:shadow-xl transition-all duration-300 ring-1 ring-slate-900/10">
-                    <img src="images/proj3.jpg" 
-                         alt="Δείγμα Εργασίας 3" 
-                         class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                         onerror="this.src='https://placehold.co/600x600/1E293B/FFFFFF?text=3'"/>
-                    <div class="absolute inset-0 bg-slate-950/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <div class="w-12 h-12 rounded-full bg-terracotta-600 text-white flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform duration-300">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Image 4 -->
-                <a href="images/proj4.jpg" 
-                   data-fancybox="gallery" 
-                   class="group relative block aspect-square rounded-2xl overflow-hidden bg-slate-900 shadow-md hover:shadow-xl transition-all duration-300 ring-1 ring-slate-900/10">
-                    <img src="images/proj4.jpg" 
-                         alt="Δείγμα Εργασίας 4" 
-                         class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                         onerror="this.src='https://placehold.co/600x600/1E293B/FFFFFF?text=4'"/>
-                    <div class="absolute inset-0 bg-slate-950/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <div class="w-12 h-12 rounded-full bg-terracotta-600 text-white flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform duration-300">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Image 5 -->
-                <a href="images/proj5.jpg" 
-                   data-fancybox="gallery" 
-                   class="group relative block aspect-square rounded-2xl overflow-hidden bg-slate-900 shadow-md hover:shadow-xl transition-all duration-300 ring-1 ring-slate-900/10">
-                    <img src="images/proj5.jpg" 
-                         alt="Δείγμα Εργασίας 5" 
-                         class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                         onerror="this.src='https://placehold.co/600x600/1E293B/FFFFFF?text=5'"/>
-                    <div class="absolute inset-0 bg-slate-950/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <div class="w-12 h-12 rounded-full bg-terracotta-600 text-white flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform duration-300">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Image 6 -->
-                <a href="images/proj6.jpg" 
-                   data-fancybox="gallery" 
-                   class="group relative block aspect-square rounded-2xl overflow-hidden bg-slate-900 shadow-md hover:shadow-xl transition-all duration-300 ring-1 ring-slate-900/10">
-                    <img src="images/proj6.jpg" 
-                         alt="Δείγμα Εργασίας 6" 
-                         class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                         onerror="this.src='https://placehold.co/600x600/1E293B/FFFFFF?text=6'"/>
-                    <div class="absolute inset-0 bg-slate-950/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <div class="w-12 h-12 rounded-full bg-terracotta-600 text-white flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform duration-300">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Image 7 -->
-                <a href="images/proj7.jpg" 
-                   data-fancybox="gallery" 
-                   class="group relative block aspect-square rounded-2xl overflow-hidden bg-slate-900 shadow-md hover:shadow-xl transition-all duration-300 ring-1 ring-slate-900/10">
-                    <img src="images/proj7.jpg" 
-                         alt="Δείγμα Εργασίας 7" 
-                         class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                         onerror="this.src='https://placehold.co/600x600/1E293B/FFFFFF?text=7'"/>
-                    <div class="absolute inset-0 bg-slate-950/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <div class="w-12 h-12 rounded-full bg-terracotta-600 text-white flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform duration-300">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Image 8 -->
-                <a href="images/proj8.jpg" 
-                   data-fancybox="gallery" 
-                   class="group relative block aspect-square rounded-2xl overflow-hidden bg-slate-900 shadow-md hover:shadow-xl transition-all duration-300 ring-1 ring-slate-900/10">
-                    <img src="images/proj8.jpg" 
-                         alt="Δείγμα Εργασίας 8" 
-                         class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                         onerror="this.src='https://placehold.co/600x600/1E293B/FFFFFF?text=8'"/>
-                    <div class="absolute inset-0 bg-slate-950/35 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <div class="w-12 h-12 rounded-full bg-terracotta-600 text-white flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform duration-300">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
-                        </div>
-                    </div>
-                </a>
-
-            </div>
         </div>
     </section>
 
@@ -516,14 +407,44 @@
          SCRIPTS: FANCYBOX V5 & FORMSPREE AJAX
     =========================================== -->
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // 1. Initialize Fancybox v5 for all [data-fancybox="gallery"] items
+<script>
+        const CMS_CONFIG = {
+            mode: 'json', // Reads directly from your gallery.json file
+            jsonUrl: 'gallery.json'
+        };
+
+        // Helper that builds the HTML card for each photo
+        function createGalleryCard(imageUrl, captionText, index) {
+            const safeCaption = (captionText || `Δείγμα Εργασίας ${index + 1}`).replace(/"/g, '&quot;');
+            return `
+                <a href="${imageUrl}" 
+                   data-fancybox="gallery"
+                   data-caption="${safeCaption}"
+                   class="gallery-card group relative aspect-square rounded-2xl overflow-hidden bg-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 block">
+                    <img src="${imageUrl}" 
+                         alt="${safeCaption}" 
+                         loading="lazy"
+                         class="w-full h-full object-cover">
+                    <div class="
+                        absolute inset-0 bg-slate-950/0 group-hover:bg-slate-950/35
+                        transition-colors duration-300 flex items-center justify-center
+                        opacity-0 group-hover:opacity-100
+                    ">
+                        <div class="w-12 h-12 rounded-full bg-white/95 text-slate-900 flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform duration-300">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/>
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+            `;
+        }
+
+        function bindFancybox() {
+            Fancybox.unbind('[data-fancybox="gallery"]');
             Fancybox.bind('[data-fancybox="gallery"]', {
                 Hash: false,
-                Thumbs: {
-                    type: "modern",
-                },
+                Thumbs: { type: "modern" },
                 Toolbar: {
                     display: {
                         left: ["infobar"],
@@ -532,6 +453,35 @@
                     },
                 },
             });
+        }
+
+        async function loadGallery() {
+            const grid = document.getElementById('gallery-grid');
+            if (!grid) return;
+
+            if (CMS_CONFIG.mode === 'json') {
+                try {
+                    const res = await fetch(CMS_CONFIG.jsonUrl, { cache: 'no-store' });
+                    if (!res.ok) throw new Error('Could not load gallery.json');
+                    const data = await res.json();
+                    const list = Array.isArray(data) ? data : (data.items || []);
+
+                    if (list.length > 0) {
+                        grid.innerHTML = list.map((item, idx) =>
+                            createGalleryCard(item.image || item.url, item.caption, idx)
+                        ).join('');
+                    }
+                } catch (err) {
+                    console.warn('Error loading gallery.json, keeping existing HTML fallback:', err);
+                }
+            }
+
+            bindFancybox();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Load Gallery from gallery.json & Initialize Fancybox
+            loadGallery();
 
             // 2. Formspree AJAX Submission Handler
             const contactForm = document.getElementById('contact-form');
